@@ -13,7 +13,7 @@ public enum GameMode { Classic, Chaos, Fate, Rapid }
 
 [Serializable] public class WheelHistoryEntry { public string sessionId; public GameMode mode; public string username; public long date; public List<SpinResult> spins; public FinalScore finalScore; }
 
-[Serializable] public class WheelSegment { public string text; public string color; public bool isRed; public int doom; }
+[Serializable] public class WheelSegmentData { public string text; public string color; public bool isRed; public int doom; }
 
 [Serializable] public class PersonalityData { public string name; public string trait; public string ending; }
 
@@ -21,20 +21,20 @@ public enum GameMode { Classic, Chaos, Fate, Rapid }
 
 public static class GameState
 {
-    public static readonly List<WheelSegment> WHEEL_SEGMENTS = new List<WheelSegment>
+    public static readonly List<WheelSegmentData> WHEEL_SEGMENTS = new List<WheelSegmentData>
     {
-        new WheelSegment { text = "DO IT", color = "#FF0000", isRed = true, doom = 30 },
-        new WheelSegment { text = "REGRET IT", color = "#1A1A1F", isRed = false, doom = 80 },
-        new WheelSegment { text = "CHAOS", color = "#FF0000", isRed = true, doom = 100 },
-        new WheelSegment { text = "VIBES ONLY", color = "#1A1A1F", isRed = false, doom = 20 },
-        new WheelSegment { text = "ASK AGAIN", color = "#FF0000", isRed = true, doom = 50 },
-        new WheelSegment { text = "ABSOLUTELY", color = "#1A1A1F", isRed = false, doom = 10 },
-        new WheelSegment { text = "NEVER EVER", color = "#FF0000", isRed = true, doom = 90 },
-        new WheelSegment { text = "COSMIC YES", color = "#1A1A1F", isRed = false, doom = 15 },
-        new WheelSegment { text = "RUN AWAY", color = "#FF0000", isRed = true, doom = 85 },
-        new WheelSegment { text = "EMBRACE IT", color = "#1A1A1F", isRed = false, doom = 40 },
-        new WheelSegment { text = "DOOM AWAITS", color = "#FF0000", isRed = true, doom = 95 },
-        new WheelSegment { text = "MAYBE...", color = "#1A1A1F", isRed = false, doom = 55 }
+        new WheelSegmentData { text = "DO IT", color = "#FF0000", isRed = true, doom = 30 },
+        new WheelSegmentData { text = "REGRET IT", color = "#1A1A1F", isRed = false, doom = 80 },
+        new WheelSegmentData { text = "CHAOS", color = "#FF0000", isRed = true, doom = 100 },
+        new WheelSegmentData { text = "VIBES ONLY", color = "#1A1A1F", isRed = false, doom = 20 },
+        new WheelSegmentData { text = "ASK AGAIN", color = "#FF0000", isRed = true, doom = 50 },
+        new WheelSegmentData { text = "ABSOLUTELY", color = "#1A1A1F", isRed = false, doom = 10 },
+        new WheelSegmentData { text = "NEVER EVER", color = "#FF0000", isRed = true, doom = 90 },
+        new WheelSegmentData { text = "COSMIC YES", color = "#1A1A1F", isRed = false, doom = 15 },
+        new WheelSegmentData { text = "RUN AWAY", color = "#FF0000", isRed = true, doom = 85 },
+        new WheelSegmentData { text = "EMBRACE IT", color = "#1A1A1F", isRed = false, doom = 40 },
+        new WheelSegmentData { text = "DOOM AWAITS", color = "#FF0000", isRed = true, doom = 95 },
+        new WheelSegmentData { text = "MAYBE...", color = "#1A1A1F", isRed = false, doom = 55 }
     };
 
     public static readonly Dictionary<string, string[]> AI_ANSWERS = new Dictionary<string, string[]>
