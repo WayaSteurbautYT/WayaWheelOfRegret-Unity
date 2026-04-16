@@ -27,7 +27,7 @@ public class WheelOfRegret : MonoBehaviour
 
     private bool isSpinning = false;
     private float currentRotation = 0f;
-    private WheelSegment currentResult = null;
+    private WheelSegmentData currentResult = null;
 
     private void Start()
     {

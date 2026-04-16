@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool musicEnabled = true;
     public bool sfxEnabled = true;
     public string username = "";
+    public string targetScene = "";
 
     private const string HISTORY_FILE_NAME = "wheel_history.json";
     private const string SETTINGS_FILE_NAME = "wheel_settings.json";
@@ -99,10 +100,10 @@ public class GameManager : MonoBehaviour
         if (currentSession == null || segment == null) return;
 
         // Generate AI answer based on doom value and game mode
-        string aiAnswer = GameState.GetAIAnswer(segment.doomValue, currentSession.mode);
+        string aiAnswer = GameState.GetAIAnswer(segment.doom, currentSession.mode);
         
         // Add spin with the actual question from UI
-        AddSpin(question, aiAnswer, segment.doomValue);
+        AddSpin(question, aiAnswer, segment.doom);
     }
 
     public void CompleteGame()
