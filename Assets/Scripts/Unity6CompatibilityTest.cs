@@ -143,11 +143,12 @@ public class Unity6CompatibilityTest : MonoBehaviour
 
     private IEnumerator TestCoroutineSystem()
     {
+        // Test coroutine functionality
+        bool coroutineCompleted = false;
         bool testPassed = false;
+        
         try
         {
-            // Test coroutine functionality
-            bool coroutineCompleted = false;
             StartCoroutine(TestCoroutine(() => coroutineCompleted = true));
 
             float timeout = 0f;
