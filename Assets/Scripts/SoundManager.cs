@@ -95,6 +95,16 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(PlayArpeggio(new float[] { 392f, 523f, 659f, 784f }, 0.1f, WaveType.Sine));
     }
 
+    public void PlaySuccessSound()
+    {
+        PlaySuccess();
+    }
+
+    public void PlayRegretSound()
+    {
+        StartCoroutine(PlayArpeggio(new float[] { 784f, 659f, 523f, 392f }, 0.15f, WaveType.Sawtooth));
+    }
+
     private enum WaveType { Sine, Square, Triangle, Sawtooth }
 
     private void PlayTone(float frequency, float duration, WaveType waveType, float volumeMultiplier = 1f)

@@ -23,7 +23,6 @@ public class CreditsController : MonoBehaviour
     }
     
     private int currentCreditIndex = 0;
-    private bool isPlaying = false;
     
     private void Start()
     {
@@ -52,7 +51,6 @@ public class CreditsController : MonoBehaviour
     
     private IEnumerator PlayCreditsSequence()
     {
-        isPlaying = true;
         currentCreditIndex = 0;
         
         while (currentCreditIndex < creditEntries.Length)
@@ -76,8 +74,6 @@ public class CreditsController : MonoBehaviour
         }
         
         yield return new WaitForSeconds(3f);
-        
-        isPlaying = false;
     }
     
     private void OnBackClicked()
@@ -93,7 +89,6 @@ public class CreditsController : MonoBehaviour
     public void RestartCredits()
     {
         StopAllCoroutines();
-        isPlaying = false;
         currentCreditIndex = 0;
         
         if (creditsText != null)

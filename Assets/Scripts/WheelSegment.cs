@@ -11,6 +11,10 @@ public class WheelSegment : MonoBehaviour
     public string answerText = "";
     public float angle = 0f;
     
+    // Backward compatibility properties
+    public string text => segmentText;
+    public int doom => doomValue;
+    
     [Header("Visual Components")]
     public MeshRenderer segmentRenderer;
     public TextMeshProUGUI segmentTextUI;

@@ -94,6 +94,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CompleteSpin(WheelSegment segment, string question)
+    {
+        if (currentSession == null || segment == null) return;
+
+        // Generate AI answer based on doom value and game mode
+        string aiAnswer = GameState.GetAIAnswer(segment.doomValue, currentSession.mode);
+        
+        // Add spin with the actual question from UI
+        AddSpin(question, aiAnswer, segment.doomValue);
+    }
+
     public void CompleteGame()
     {
         if (currentSession == null) return;

@@ -23,6 +23,7 @@ public class GameUIController : MonoBehaviour
     public GameMode currentGameMode = GameMode.Classic;
     
     private bool isProcessing = false;
+    private WheelSegment selectedSegment = null;
     
     private void Start()
     {
@@ -115,6 +116,9 @@ public class GameUIController : MonoBehaviour
     {
         if (selectedSegment == null) return;
         
+        // Store the selected segment for later use
+        this.selectedSegment = selectedSegment;
+        
         // Show result
         if (resultPanel != null)
         {
@@ -171,7 +175,7 @@ public class GameUIController : MonoBehaviour
         // Save game session
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.CompleteSpin(selectedSegment);
+            GameManager.Instance.CompleteSpin(selectedSegment, questionInput?.text ?? "");
         }
         
         // Load results scene
