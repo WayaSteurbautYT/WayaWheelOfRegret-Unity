@@ -59,10 +59,14 @@ public class ResultsController : MonoBehaviour
             totalPointsText.text = $"Total Points: {score.totalPoints}";
             
         if (creativityText != null)
+        {
             creativityText.text = $"Creativity: {score.creativityPoints}";
+        }
             
         if (stupidityText != null)
+        {
             stupidityText.text = $"Stupidity: {score.stupidityPoints}";
+        }
         
         // Display stars
         DisplayStars(score.stars);
