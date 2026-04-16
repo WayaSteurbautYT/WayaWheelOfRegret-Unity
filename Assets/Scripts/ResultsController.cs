@@ -30,13 +30,19 @@ public class ResultsController : MonoBehaviour
     {
         // Setup navigation buttons
         if (playAgainButton != null)
+        {
             playAgainButton.onClick.AddListener(OnPlayAgain);
+        }
             
         if (menuButton != null)
+        {
             menuButton.onClick.AddListener(OnMenu);
+        }
             
         if (creditsButton != null)
+        {
             creditsButton.onClick.AddListener(OnCredits);
+        }
         
         // Load and display results
         if (GameManager.Instance != null && GameManager.Instance.currentSession != null)
@@ -53,10 +59,14 @@ public class ResultsController : MonoBehaviour
         
         // Display score values
         if (scoreText != null)
+        {
             scoreText.text = $"Final Score: {score.totalPoints}";
+        }
             
         if (totalPointsText != null)
+        {
             totalPointsText.text = $"Total Points: {score.totalPoints}";
+        }
             
         if (creativityText != null)
         {
