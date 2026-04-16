@@ -90,7 +90,7 @@ public class TestSuite : MonoBehaviour
         {
             var testSpins = new List<SpinResult>
             {
-                new SpinResult { id = "1", question = "Test", answer = "Answer", doom = 50, timestamp = System.DateTime.Now.Ticks, spinIndex = 0 }
+                new SpinResult { id = "1", question = "Test", answer = "Answer", doom = 50, timestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds(), spinIndex = 0 }
             };
 
             var score = GameState.CalculateFinalScore(testSpins, GameMode.Classic);
