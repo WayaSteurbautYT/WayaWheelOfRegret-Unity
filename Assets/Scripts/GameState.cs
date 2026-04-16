@@ -79,7 +79,7 @@ public static class GameState
     {
         if (spins == null || spins.Count == 0) return new FinalScore { stars = 0, regretLevel = 0, creativityPoints = 0, stupidityPoints = 0, totalPoints = 0 };
 
-        float avgDoom = spins.Average(s => s.doom);
+        float avgDoom = (float)spins.Average(s => s.doom);
         int questionLength = spins.Sum(s => s.question?.Length ?? 0);
         int stars = Mathf.Clamp(Mathf.RoundToInt((100 - avgDoom) / 20), 0, 5);
         int regretLevel = Mathf.RoundToInt(avgDoom);

@@ -65,10 +65,10 @@ public class MainMenu : MonoBehaviour
         Color selectedColor = Color.red;
         Color normalColor = new Color(0.165f, 0.165f, 0.212f, 1f);
 
-        UpdateButtonAppearance(classicModeButton, mode == GameMode.Classic, selectedColor, normalColor);
-        UpdateButtonAppearance(chaosModeButton, mode == GameMode.Chaos, selectedColor, normalColor);
-        UpdateButtonAppearance(fateModeButton, mode == GameMode.Fate, selectedColor, normalColor);
-        UpdateButtonAppearance(rapidModeButton, mode == GameMode.Rapid, selectedColor, normalColor);
+        UpdateButtonAppearance(classicModeButton, selectedMode == GameMode.Classic, selectedColor, normalColor);
+        UpdateButtonAppearance(chaosModeButton, selectedMode == GameMode.Chaos, selectedColor, normalColor);
+        UpdateButtonAppearance(fateModeButton, selectedMode == GameMode.Fate, selectedColor, normalColor);
+        UpdateButtonAppearance(rapidModeButton, selectedMode == GameMode.Rapid, selectedColor, normalColor);
     }
 
     private void UpdateButtonAppearance(Button button, bool isSelected, Color selectedColor, Color normalColor)

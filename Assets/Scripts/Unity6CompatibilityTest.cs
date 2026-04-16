@@ -143,6 +143,7 @@ public class Unity6CompatibilityTest : MonoBehaviour
 
     private IEnumerator TestCoroutineSystem()
     {
+        bool testPassed = false;
         try
         {
             // Test coroutine functionality
@@ -159,6 +160,7 @@ public class Unity6CompatibilityTest : MonoBehaviour
             if (!coroutineCompleted)
                 throw new System.Exception("Coroutine system failed");
 
+            testPassed = true;
             Debug.Log("✓ Coroutine System Test Passed");
         }
         catch (System.Exception e)
